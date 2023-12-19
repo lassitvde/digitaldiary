@@ -1,0 +1,298 @@
+@font-face {
+    font-family: 'MosteraRegular';
+    src: url('fonts/MosteraRegular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'CircularStd-Black';
+    src: url('fonts/CircularStd-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Bodoni';
+    src: url('fonts/BodoniItalic.ttf') format('truetype');
+}
+
+body {
+    /* margin: 10; */
+    display: grid;
+    grid-template-rows: 1fr repeat(2, 2fr) repeat(7fr);
+    /* grid-template-rows: repeat(10, 1fr); */
+    grid-template-columns: repeat(4, 1fr);
+    padding: 40px;
+    gap: 40px;
+
+    font-family: 'CircularStd-Black', sans-serif;
+    /* color: #5343c0; */
+    font-size: 1.5em;
+
+}
+
+img {
+    height: calc(100% - 20px);
+    width:100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Bodoni';
+    font-size: 1.4em;
+    /* margin: 5px; */
+    margin: 10px;
+    /* padding:-30px; */
+}
+
+.titlebar {
+    /* flex-wrap:wrap; */
+    height: 20px;
+    margin: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1.5px outset rgb(42, 36, 36);
+}
+
+#checkboxContainer {
+    /* display:block; */
+    max-height: 150px;
+    margin: 0;
+
+    overflow-y: auto;
+}
+
+#checkboxContainer div {
+    text-align: left;
+    /* width:100%; */
+    /* margin:0px; */
+    font-size: 0.4em;
+}
+
+.y2k {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    border: 1.5px solid rgb(42, 36, 36);
+    /* max-height:500px; */
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1 / span 4;
+    /* background-color: #fb9ce3;
+    color: #fff; */
+    padding: 25px;
+
+    text-align: center;
+    font-family: 'MosteraRegular';
+    font-size: 2em;
+}
+
+
+#mainImage {
+    grid-row: 2 / span 2;
+    grid-column: 1 / span 2;
+    display:block;
+    max-height:500px;
+    /* overflow: hidden; */
+    /* height: 400px; */
+    /* background-color: #ecf0f1; */
+    text-align: center;
+    /* padding-bottom: 75% */
+    /* overflow:hidden; */
+}
+
+#weather {
+    grid-row: 2;
+    grid-column: 3 / span 2;
+
+    /* font-family: 'Bodoni'; */
+    text-align: center;
+
+    /* overflow:hidden; */
+    /* background: ; */
+    /* background-color:#eef1da; */
+
+    /* display: flex;
+    flex-direction:column;
+    box-sizing:border-box;
+    border: 1.5px solid rgb(42, 36, 36); */
+    /* flex-wrap: wrap; */
+}
+
+/* #weather div {
+    padding:5px;
+} */
+
+
+#clockWindow {
+    grid-row: 3;
+    grid-column: 3;
+    /* background: linear-gradient(to top left, #e2e8c2, #e4d4e1); */
+
+    align-items: center;
+    /* display:flex;
+    justify-content: baseline; */
+    /* background-color: #f39c12; */
+    /* padding: 10px; */
+    text-align: center;
+}
+
+#clock {
+    /* background-color: #f39c12; */
+    padding: 10px;
+    text-align: center;
+    font-family: 'Bodoni';
+    font-size: 1.4em;
+    /* background-color: #34495e; */
+    /* flex-grow: 1; */
+
+}
+
+#reminders {
+    grid-row: 3;
+    grid-column: 4;
+
+    /* background-color: #e74c3c; */
+    /* padding: 10px; */
+    text-align: center;
+
+}
+
+#reminders div {
+    padding: 5px;
+}
+
+#diary {
+    grid-row: 4 / span 4;
+    grid-column: 1 / span 2;
+
+    /* background-color: #3498db; */
+    text-align: center;
+    max-height:600px;
+}
+
+#diary div {
+    padding: 10px;
+    /* max-height:500px; */
+}
+
+#editor {
+    max-height: 60%;
+}
+
+/* #justHtml{
+    font-size:3em;
+    color:red;
+} */
+
+#calendar {
+    grid-row: 4 / span 3;
+    grid-column: 3 / span 2;
+    /* background-color: #ecadf4; */
+    text-align: center;
+}
+
+#calendar div {
+    padding: 5px;
+}
+
+
+#spotify {
+    display:block;
+    grid-row: 7;
+    grid-column: 3 / span 2;
+    /* background-color: #f4d58c; */
+    text-align: center;
+    
+}
+
+#spotify div {
+    max-height: 160px;
+    overflow:auto;
+}
+
+#spotify iframe {
+    padding: 10px;
+}
+
+footer {
+    grid-row: 9;
+    grid-column: 1 / span 4;
+    background-color: #34495e;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* Media query for smaller screens (max height < width) */
+@media only screen and (max-width: 860px) {
+    body {
+        display: grid;
+        grid-template-rows: 1fr 2fr repeat(10, fr);
+        /* grid-template-rows: repeat(13, 1fr); */
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+        gap: 20px;
+    }
+
+    header {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    #mainImage {
+        grid-row: 2 / span 2;
+        grid-column: 1 / span 2;
+        /* background-color: #ecf0f1; */
+        text-align: center;
+    }
+
+    #weather {
+        grid-row: 4;
+        grid-column: 1 / span 2;
+    }
+
+    #clockWindow {
+        grid-row: 5;
+        grid-column: 1;
+        /* background-color: #f39c12; */
+        /* padding: 10px; */
+        text-align: center;
+    }
+
+    #reminders {
+        grid-row: 5;
+        grid-column: 2;
+        /* background-color: #e74c3c; */
+        /* padding: 10px; */
+        text-align: center;
+    }
+
+    #diary {
+        grid-row: 6 / span 4;
+        grid-column: 1 / span 2;
+        /* max-height:200px; */
+    }
+
+    #editor {
+        max-height: 200px;
+    }
+
+    #calendar {
+        grid-row: 10 / span 2;
+        grid-column: 1 / span 2;
+    }
+
+    #spotify {
+        grid-row: 12;
+        grid-column: 1 / span 2;
+    }
+
+    footer {
+        grid-row: 13;
+        grid-column: 1 / span 2;
+    }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!--designs-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> <!--text editor quill-->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="shapes.js"></script> -->
+    <title>📓digital diary🥰</title>
+</head>
+
+<body>
+    <header id="header" class="y2k">Good Morning</header>
+
+    <!-- main image -->
+    <div id="mainImage" class="y2k">
+        <div class="titlebar"></div>
+        <img id="mainImageFile" src="./images/morning.jpg" />
+
+    </div>
+
+    <!--weather widget-->
+    <div id="weather" class="y2k">
+        <div class="titlebar"></div>
+        <h1>weather 😌</h1>
+        <div id="ww_262d3ac4632" v='1.3' loc='id'
+            a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl4479"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","cl_odd":"#00000000"}'>
+            More forecasts: <a href="https://sharpweather.com/ko/seoul/" id="ww_262d3ac4632_u" target="_blank">서울 날씨</a>
+        </div>
+        <script async src="https://app2.weatherwidget.org/js/?id=ww_262d3ac4632"></script>
+    </div>
+
+    <!--clock widget-->
+    <div id="clockWindow" class="y2k">
+        <div class="titlebar"></div>
+        <div id="clock"></div>
+    </div>
+
+    <!--reminders widget-->
+    <div id="reminders" class="y2k">
+        <div class="titlebar"></div>
+        <h1>reminders<br /></h1>
+        <form style="display:flex; justify-content:center;">
+            <input type="text" id="customOption" name="customOption" placeholder="add task here...">
+            <button type="button" id="addCustomOption">add task</button>
+        </form>
+        <form style="display:block;">
+            <div id="checkboxContainer"></div>
+        </form>
+    </div>
+
+    <!--diary widget-->
+    <div id="diary" class="y2k">
+        <div class="titlebar"></div>
+        <h1>diary notes</h1>
+        <div id="editor"></div>
+        <!-- <div id="justHtml">hello</div> -->
+    </div>
+
+    <!--calendar widget-->
+    <div id="calendar" class="y2k">
+        <div class="titlebar"></div>
+        <h1> calendar <br /> </h1>
+        <iframe
+            src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23B39DDB&ctz=Asia%2FSeoul&showTitle=0&showTz=0&showCalendars=0&showPrint=0&title=emma's&mode=MONTH&showTabs=0&src=YmFuYW5haW5taWxrQGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237986CB&color=%2333B679&color=%230B8043"
+            style="border-width:0" width=auto height="300" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <!--spotify widget-->
+    <div id="spotify" class="y2k">
+        <div class="titlebar"></div>
+        <div>
+            <h1> playlist 🎧<br /> </h1>
+            <iframe style="border-radius:12px;"
+                src="https://open.spotify.com/embed/playlist/1ktw3MGv8OjIVefEPgvouU?utm_source=generator?autoplay=1"
+                width="90%" height=200px frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer id="footer" class="y2k">digital diary!
+    </footer>
+
+    <!--enable quill text editor-->
+    <script src="script.js"></script>
+    <script>
+        var toolbarOptions = [
+            ['bold', 'italic', 'underline'],
+            ['link', 'image'],
+            [{ 'header': [1, 2, 3, 4, 5, false] }], // custom dropdown
+            [{ 'color': [] }, { 'background': [] }, { 'align': [] }]]
+
+        var quill = new Quill('#editor', {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            placeholder: " what's on your mind?",
+            theme: 'snow'
+        });
+
+        // var quillContent = $('#editor .ql-editor').html();
+
+        // var justHtmlContent = document.getElementById('justHtml');
+        // justHtmlContent.innerHTML = quillContent;
+
+
+
+        // // quill.on('text-change', function () {
+        // //     var justHtml = editor.root.innerHTML;
+        // //     justHtmlContent.innerHTML = justHtml;
+        // // });
+    </script>
+</body>
+
+</html>
